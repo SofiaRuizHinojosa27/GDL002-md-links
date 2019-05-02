@@ -1,14 +1,14 @@
 const index= require('../index.js');
-const mdLinks = require('../');
-
-
-describe('mdLinks', () => {
-
-  it('should...', () => {
-    console.log('FIX ME!');
-  });
-
-});
+// const mdLinks = require('../');
+//
+// 
+// describe('mdLinks', () => {
+//
+//   it('should...', () => {
+//     console.log('FIX ME!');
+//   });
+//
+// });
 
 describe ("pathCheck", ()=>{
   it("should return false", ()=>{
