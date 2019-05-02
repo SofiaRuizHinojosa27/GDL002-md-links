@@ -1,30 +1,21 @@
-const index= require('../md-links.js');
-// const mdLinks = require('../');
-//
-//
-// describe('mdLinks', () => {
-//
-//   it('should...', () => {
-//     console.log('FIX ME!');
-//   });
-//
-// });
+const mdLinks = require('../md-Links.js');
+
 
 describe ("pathCheck", ()=>{
   it("should return false", ()=>{
-    expect(md-links.pathCheck()).toBe(false);
+    expect(mdLinks.pathCheck()).toBe(false);
   });
   it("should return true", ()=>{
-    expect(md-links.pathCheck("./README.md")).toBe(true);
+    expect(mdLinks.pathCheck("./README.md")).toBe(true);
 });
 });
 
 describe( "pathExist", ()=>{
   it("should be false", () =>{
-    expect(md-links.pathExist("./README.txt")).toBe(false);
+    expect(mdLinks.pathExist("./README.txt")).toBe(false);
   });
 it("Should be true", ()=>{
-  expect(md-links.pathExist("./README.md")).toBe(true);
+  expect(mdLinks.pathExist("./README.md")).toBe(true);
 });
 });
 
@@ -38,10 +29,10 @@ it("Should be true", ()=>{
 
 describe ("pathMD", ()=>{
   it("should be true",()=>{
-    expect(md-links.pathMD("./README.md")).toBe(true);
+    expect(mdLinks.pathMD("./README.md")).toBe(true);
   });
   it("should return false", ()=>{
-    expect(md-links.pathMD("./index.js")).toBe(false);
+    expect(mdLinks.pathMD("./index.js")).toBe(false);
 });
 
 });

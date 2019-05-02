@@ -1,9 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-// This will be change when I do the CLI
-// const pathFile = process.argv[2];
-// const mdLinks = require("./index");
-// const fileContent = mdLinks(pathFile, null);
+const pathFile = process.argv[2];
+const mdLinks = require("./index");
+const fileContent = mdLinks(pathFile, null);
 
 module.exports =  {
 
@@ -53,6 +52,38 @@ pathMD: function(pathfile){
   else{
     return false;
   }
+},
+
+//First read the file
+fileContent: fileContent.then(
+   (data)=> { // On Success
+    console.log("Links encontrados:");
+    getLinks(data);
+   },
+   (err)=> { // On Error
+       console.error(err);
+   }
+ ),
+
+//function that extracts the links
+getLinks: function(data) {
+    const mdLinkRgEx = /\[(.+?)\]\((.+?\))/g;
+    const mdLinkRgEx2 = /\[(.+?)\]\((.+?)\)/;
+    let allLinks = data.match(mdLinkRgEx);
+    let htmlLinks = [];
+  for (var x in allLinks) {
+    let grpdDta = mdLinkRgEx2.exec(allLinks[x]);
+    let grupoData = {
+        href: grpdDta[2], //es la posición donde empieza el link
+        text: grpdDta[1],
+        file: pathFile
+   };
+    htmlLinks.push(grupoData);
+  }
+    console.log(htmlLinks.length);
+    console.log(htmlLinks);
+    return (htmlLinks);
+
 }
 
 };
