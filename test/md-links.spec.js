@@ -10,12 +10,12 @@ describe ("pathCheck", ()=>{
 });
 });
 
-describe( "pathExist", ()=>{
+describe( "pathExists", ()=>{
   it("should be false", () =>{
-    expect(mdLinks.pathExist("./README.txt")).toBe(false);
+    expect(mdLinks.pathExists("./README.txt")).toBe(false);
   });
 it("Should be true", ()=>{
-  expect(mdLinks.pathExist("./README.md")).toBe(true);
+  expect(mdLinks.pathExists("./README.md")).toBe(true);
 });
 });
 
