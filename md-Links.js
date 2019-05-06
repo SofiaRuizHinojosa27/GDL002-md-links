@@ -60,6 +60,7 @@ function pathMD (pathFile){
 function getLinks(data) {
     const mdLinkRgEx = /\[(.+?)\]\((.+?\))/g;
     const mdLinkRgEx2 = /\[(.+?)\]\((.+?)\)/;
+// the math method executes a search for a match in a string and returns an array, or null if there is no match
     let allLinks = data.match(mdLinkRgEx);
     let htmlLinks = [];
   for (var x in allLinks) {

@@ -4,12 +4,12 @@
   "bin": {
     "md-links": "md-Links.js"
   },
-
   "scripts": {
-    "start":"node index.js",
-    "test": "jest"
+    "start": "node index.js",
+    "test": "jest",
+    "eslint": "eslint --ext .js test/",
+    "pretest": "npm run eslint"
   },
-  
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
